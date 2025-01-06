@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import M8Logo from './components/m8-logo';
-import TGSLogo from './components/tgs-logo';
 import PlaygroundCard from './components/playground-card';
 import PreviewCard from './components/preview-card.png';
 import GithubIcon from './assets/icons/github-icon';
