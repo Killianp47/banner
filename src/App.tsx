@@ -113,7 +113,7 @@ const App = () => {
             <p className="text-foreground-accent text-xs text-center mt-5 py-1.5 px-3 bg-background-accent rounded-full w-fit mx-auto">
               Powered by
               <span className="font-semibold ml-2">
-                <TGSLogo /> Kpr
+               Kpr
               </span>
             </p>
           </a>
