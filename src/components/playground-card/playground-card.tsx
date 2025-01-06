@@ -23,7 +23,7 @@ const PlaygroundCard = (props: PlaygroundCardProps) => {
             type="text"
             id="pseudo"
             className="w-full h-9 border border-border rounded-md p-2 text-sm focus:outline-none focus:ring-2 focus:ring-foreground-accent"
-            placeholder="SOUEEZIE"
+            placeholder="MEDJA"
             value={props.username}
             onChange={(e) => props.onUsernameChange(e.target.value)}
           />
@@ -36,7 +36,7 @@ const PlaygroundCard = (props: PlaygroundCardProps) => {
             type="text"
             id="role"
             className="w-full h-9 border border-border rounded-md p-2 text-sm focus:outline-none focus:ring-2 focus:ring-foreground-accent"
-            placeholder="CEO OF LEAK"
+            placeholder="ULTRA"
             value={props.role}
             onChange={(e) => props.onRoleChange(e.target.value)}
           />
