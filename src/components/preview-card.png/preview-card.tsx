@@ -11,8 +11,10 @@ type PreviewCardProps = {
   selectedBanner: string;
   onDownload: () => void;
   onCopy: () => void;
-  positionX: number;
-  positionY: number;
+  positionXPseudo: number;
+  positionYPseudo: number;
+  positionXRole: number;
+  positionYRole: number;
 };
 
 const PreviewCard = (props: PreviewCardProps) => {
@@ -105,8 +107,8 @@ const PreviewCard = (props: PreviewCardProps) => {
                   <>
                     <Text
                       text={props.username}
-                      x={(getImageOffsets().offsetX + props.positionX ) - 100} // Ajouter le décalage
-                      y={getImageOffsets().offsetY + props.positionY}
+                      x={(getImageOffsets().offsetX + props.positionXPseudo )}
+                      y={getImageOffsets().offsetY + props.positionYPseudo}
                       fontSize={getImageDimensions().width * 0.045}
                       fontFamily="TuskerGrotesk"
                       fill="#1e1d1e"
@@ -116,8 +118,8 @@ const PreviewCard = (props: PreviewCardProps) => {
                     />
                     <Text
                       text={props.role}
-                      x={props.positionX -77}
-                      y={props.positionY + 60}
+                      x={props.positionXRole}
+                      y={props.positionYRole}
                       fontSize={getImageDimensions().width * 0.016}
                       fontFamily="Helvetica"
                       fontVariant="bold"

@@ -19,8 +19,11 @@ const App = () => {
     artist: 'dvm',
     bannerNumber: 1,
   });
-  const [positionX, setPositionX] = useState(100); // Initial value for X position
-  const [positionY, setPositionY] = useState(50); // Initial value for Y position
+  const [positionXPseudo, setPositionXPseudo] = useState(100); // Initial value for X position
+  const [positionYPseudo, setPositionYPseudo] = useState(50); // Initial value for Y position
+
+  const [positionXRole, setPositionXRole] = useState(150); // Initial value for X position
+  const [positionYRole, setPositionYRole] = useState(100); // Initial value for Y position
   const drawSizedImage = () => {
     const sourceCanvas = document.querySelector('canvas');
     if (!sourceCanvas) return;
@@ -111,9 +114,9 @@ const App = () => {
             rel="noopener noreferrer"
           >
             <p className="text-foreground-accent text-xs text-center mt-5 py-1.5 px-3 bg-background-accent rounded-full w-fit mx-auto">
-              Powered by
+              Project by
               <span className="font-semibold ml-2">
-               Kpr
+              TGS
               </span>
             </p>
           </a>
@@ -125,7 +128,9 @@ const App = () => {
             role={role}
             selectedBanner={m8_1Banner}
             onDownload={handleDownload}
-            onCopy={handleCopy} positionX={positionX} positionY={positionY}          />
+            onCopy={handleCopy} positionXPseudo={positionXPseudo} positionYPseudo={positionYPseudo} 
+            positionXRole={positionXRole} positionYRole={positionYRole}
+            />
           <PlaygroundCard
             username={username}
             role={role}
@@ -133,10 +138,15 @@ const App = () => {
               setUsername(newUsername.toUpperCase())
             }
             onRoleChange={(newRole) => setRole(newRole.toUpperCase())}
-            positionX={positionX}
-            positionY={positionY}
-            onPositionXChange={(newX) => setPositionX(newX)}
-            onPositionYChange={(newY) => setPositionY(newY)}
+            positionXPseudo={positionXPseudo}
+            positionYPseudo={positionYPseudo}
+            onPositionXPseudoChange={(newX) => setPositionXPseudo(newX)}
+            onPositionYPseudoChange={(newY) => setPositionYPseudo(newY)}
+            positionXRole={positionXRole}
+            positionYRole={positionYRole}
+            onPositionXRoleChange={(newX) => setPositionXRole(newX)}
+            onPositionYRoleChange={(newY) => setPositionYRole(newY)}
+
           />
         </main>
 
@@ -168,13 +178,7 @@ const App = () => {
             >
               @reaiucas
             </a>
-            , amélioré par {''}
-            <a
-              href="https://x.com/kpr__6"
-              className="font-semibold"
-              target="_blank"
-              rel="noopener noreferrer"
-            >@Kpr__6</a>
+        
           </p>
         </footer>
       </div>
