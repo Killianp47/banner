@@ -140,7 +140,7 @@ const App = () => {
           />
         </main>
 
-        <footer className="p-4 text-center text-foreground-secondary font-figtree text-sm">
+        <footer className="p-4 text-center text-black font-figtree text-sm">
           <a
             href="https://github.com/zachdlz/m8-banner-editor"
             className="flex justify-center mb-1"
@@ -168,7 +168,13 @@ const App = () => {
             >
               @reaiucas
             </a>
-            .
+            , amélioré par {''}
+            <a
+              href="https://x.com/kpr__6"
+              className="font-semibold"
+              target="_blank"
+              rel="noopener noreferrer"
+            >@Kpr__6</a>
           </p>
         </footer>
       </div>
