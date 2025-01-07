@@ -19,7 +19,8 @@ const App = () => {
     artist: 'dvm',
     bannerNumber: 1,
   });
-
+  const [positionX, setPositionX] = useState(100); // Initial value for X position
+  const [positionY, setPositionY] = useState(50); // Initial value for Y position
   const drawSizedImage = () => {
     const sourceCanvas = document.querySelector('canvas');
     if (!sourceCanvas) return;
@@ -122,12 +123,9 @@ const App = () => {
           <PreviewCard
             username={username}
             role={role}
-            selectedBanner={
-              m8_1Banner
-            }
+            selectedBanner={m8_1Banner}
             onDownload={handleDownload}
-            onCopy={handleCopy}
-          />
+            onCopy={handleCopy} positionX={positionX} positionY={positionY}          />
           <PlaygroundCard
             username={username}
             role={role}
@@ -135,6 +133,10 @@ const App = () => {
               setUsername(newUsername.toUpperCase())
             }
             onRoleChange={(newRole) => setRole(newRole.toUpperCase())}
+            positionX={positionX}
+            positionY={positionY}
+            onPositionXChange={(newX) => setPositionX(newX)}
+            onPositionYChange={(newY) => setPositionY(newY)}
           />
         </main>
 

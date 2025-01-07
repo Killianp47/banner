@@ -11,6 +11,8 @@ type PreviewCardProps = {
   selectedBanner: string;
   onDownload: () => void;
   onCopy: () => void;
+  positionX: number;
+  positionY: number;
 };
 
 const PreviewCard = (props: PreviewCardProps) => {
@@ -71,7 +73,11 @@ const PreviewCard = (props: PreviewCardProps) => {
   }, []);
 
   const isLoaded = fontLoaded && imageStatus === 'loaded';
-
+  const getImageOffsets = () => ({
+    offsetX: 0,
+    offsetY: 0,
+  });
+    
   return (
     <div className="order-1 xl:order-none w-full xl:w-[80%] border border-transparent rounded-lg bg-grid bg-repeat bg-center bg-cover relative font-figtree flex flex-col h-full overflow-x-hidden">
       <h2 className="text-foreground-primary text-lg font-bold font-cal text-center pt-4">
@@ -90,6 +96,7 @@ const PreviewCard = (props: PreviewCardProps) => {
                 justifyContent: 'center',
                 alignItems: 'center',
                 maxWidth: '100%',
+                
               }}
             >
               <Layer>
@@ -98,8 +105,8 @@ const PreviewCard = (props: PreviewCardProps) => {
                   <>
                     <Text
                       text={props.username}
-                      x={getImageDimensions().width * 0.778}
-                      y={getImageDimensions().height * 0.34}
+                      x={(getImageOffsets().offsetX + props.positionX ) - 100} // Ajouter le décalage
+                      y={getImageOffsets().offsetY + props.positionY}
                       fontSize={getImageDimensions().width * 0.045}
                       fontFamily="TuskerGrotesk"
                       fill="#1e1d1e"
@@ -109,8 +116,8 @@ const PreviewCard = (props: PreviewCardProps) => {
                     />
                     <Text
                       text={props.role}
-                      x={getImageDimensions().width * 0.795}
-                      y={getImageDimensions().height * 0.48}
+                      x={props.positionX -77}
+                      y={props.positionY + 60}
                       fontSize={getImageDimensions().width * 0.016}
                       fontFamily="Helvetica"
                       fontVariant="bold"
@@ -129,7 +136,7 @@ const PreviewCard = (props: PreviewCardProps) => {
       </div>
       <div className="flex justify-between items-center bg-black/15 px-5 py-5 rounded-b-lg mt-auto">
         <p className="text-foreground-primary text-sm">
-          Taille : <span className="font-bold">1500x500</span>
+          
         </p>
         <div className="flex gap-2 text-sm">
           <Button
@@ -138,12 +145,7 @@ const PreviewCard = (props: PreviewCardProps) => {
             text="Télécharger"
             onClick={props.onDownload}
           />
-          <Button
-            variant="secondary"
-            icon={<CopyIcon />}
-            text="Copier"
-            onClick={props.onCopy}
-          />
+          
         </div>
       </div>
     </div>
