@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Button from '../buttons';
-import { CopyIcon, DownloadIcon } from '../../assets/icons';
+import { DownloadIcon } from '../../assets/icons';
 import { Layer, Stage, Image, Text } from 'react-konva';
 import useImage from 'use-image';
 import { Loader } from '../loader';
